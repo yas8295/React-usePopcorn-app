@@ -180,7 +180,21 @@ function Footer() {
         Oreder
       </button>
     </div>
-  ) : null;
+  ) : (
+    <div className="d-flex flex-column align-items-center">
+      <p
+        className="mt-5"
+        style={{
+          fontSize: "14px",
+          textAlign: "center",
+          letterSpacing: "2.5px",
+          lineHeight: "1.5",
+        }}
+      >
+        We're closed
+      </p>
+    </div>
+  );
 }
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
