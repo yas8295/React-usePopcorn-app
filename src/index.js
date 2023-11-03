@@ -115,6 +115,7 @@ function Menu() {
             className={pizza.soldOut === true ? "sold-out" : null}
             style={{ width: "120px" }}
             src={pizza.photoName}
+            alt="pizza"
           ></img>
           <div
             className={("w-100", pizza.soldOut === true ? "sold-out" : null)}
@@ -174,7 +175,7 @@ function Footer() {
           fontSize: "15px",
           fontWeight: "600",
           border: "none",
-          backgroundColor: " #edc84b",
+          backgroundColor: "#edc84b",
         }}
       >
         Oreder
