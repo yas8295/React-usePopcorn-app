@@ -1,5 +1,5 @@
 {
-  "homepage": "https://yas8295.github.io/React-Eat-n-Split",
+  "homepage": "https:/yas8295.github.io/React-Eat-n-Split",
   "name": "Eat-N-Split",
   "version": "0.1.0",
   "private": true,
@@ -18,7 +18,7 @@
     "test": "react-scripts test",
     "eject": "react-scripts eject",
     "predeploy": "npm run build",
-    "deploy": "gh-pages -d build" 
+    "deploy": "gh-pages -d build"
   },
   "eslintConfig": {
     "extends": [
