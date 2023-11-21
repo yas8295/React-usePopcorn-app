@@ -55,8 +55,9 @@ export default function App() {
     setActiveMovie(false);
   }
 
-  function remove(movie) {
+  function remove(movie, e) {
     setWatchedMovie((l) => l.filter((m) => m !== movie));
+    e.stopPropagation();
   }
 
   function back() {
@@ -141,7 +142,7 @@ export default function App() {
                         ⏳ {m.Runtime}
                       </p>
                       <button
-                        onClick={() => remove(m)}
+                        onClick={(e) => remove(m, e)}
                         className="position-absolute d-flex justify-content-center align-items-center"
                         style={{
                           top: "-10px",
