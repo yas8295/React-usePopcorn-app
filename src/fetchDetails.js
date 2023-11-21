@@ -12,7 +12,7 @@ export default function useFetchDetails(activeMovie) {
         try {
           setLoadingDetails(true);
           const res = await fetch(
-            `http://www.omdbapi.com/?apikey=${key}&i=${activeMovie.imdbID}`
+            `https://www.omdbapi.com/?apikey=${key}&i=${activeMovie.imdbID}`
           );
           const data = await res.json();
           setActiveMovieDeails(data);

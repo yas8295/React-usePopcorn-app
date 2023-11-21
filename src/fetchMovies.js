@@ -16,7 +16,7 @@ export default function useFetchMovies(searchMovie) {
           setLoading(true);
           setErrorMessage("");
           const res = await fetch(
-            `http://www.omdbapi.com/?apikey=${key}&s=${searchMovie}`,
+            `https://www.omdbapi.com/?apikey=${key}&s=${searchMovie}`,
             { signal: controller.signal }
           );
           if (!res.ok) throw new Error("⛔ Somthing Wrong with Network...");

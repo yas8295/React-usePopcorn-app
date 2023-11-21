@@ -33,7 +33,7 @@ export default function App() {
     [activeMovie]
   );
 
-  http: localStorage.setItem("watchedList", JSON.stringify(watchedMovie));
+  https: localStorage.setItem("watchedList", JSON.stringify(watchedMovie));
 
   const movieRate = data.slice().find((m) => m.imdbID === activeMovie.imdbID);
 
