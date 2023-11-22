@@ -38,6 +38,16 @@ export function Movie({ num, children, movie, addMovie }) {
     addMovie(movie);
   }
 
+  useEffect(function () {
+    document
+      .querySelector(".box.right")
+      .addEventListener("click", function (e) {
+        if (e.target.closest(".movie")) {
+          window.scrollTo(0, document.querySelector(".box.left").offsetTop);
+        }
+      });
+  }, []);
+
   const trans = {
     translate: `0 -${Number(num) * 100}%`,
     transitionDelay: `${num < 10 ? "0." : ""}${String(num).at(0)}s`,
