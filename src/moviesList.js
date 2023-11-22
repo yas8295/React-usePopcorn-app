@@ -22,7 +22,7 @@ export function Box({ children, dir }) {
       style={{
         backgroundColor: "#2b3035",
         borderRadius: "10px",
-
+        translate: `${window.innerWidth > 800 ? "" : "0"}`,
         borderLeft: "3px solid #512c99",
         borderRight: "3px solid #512c99",
       }}
