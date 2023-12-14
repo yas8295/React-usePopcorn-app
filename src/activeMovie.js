@@ -1,5 +1,6 @@
 import { useState, useEffect } from "react";
 import Rating from "./rating";
+import { motion } from "framer-motion";
 
 export default function ActiveMovie({
   activeMovieDetails,
@@ -25,30 +26,17 @@ export default function ActiveMovie({
     [activeMovie]
   );
 
-  function animation(e) {
-    e.style.opacity = "1";
-    e.style.translate = "0";
-  }
-
-  useEffect(function () {
-    setTimeout(function () {
-      [...this.document.querySelectorAll(".active-movie")].forEach((e) =>
-        animation(e)
-      );
-    }, 500);
-  });
-
   return (
     <>
-      <div
+      <motion.div
+        initial={{ opacity: 0, x: "-100%" }}
+        animate={{ opacity: 1, x: "0" }}
+        transition={{ type: "spring", stiffness: 100 }}
         className="active-movie d-flex gap-sm-5 flex-wrap"
         style={{
           backgroundColor: "rgb(77 57 131)",
           borderBottomRightRadius: "20px",
           borderBottomLeftRadius: "20px",
-          translate: "-100%",
-          opacity: "0",
-          transition: "1s",
         }}
       >
         <img
@@ -126,14 +114,12 @@ export default function ActiveMovie({
             style={{ color: "#ffffff" }}
           ></i>
         </h1>
-      </div>
-      <div
+      </motion.div>
+      <motion.div
+        initial={{ opacity: 0, scale: 0 }}
+        animate={{ opacity: 1, scale: 1 }}
+        transition={{ type: "spring", stiffness: 100 }}
         className="active-movie"
-        style={{
-          translate: "-100%",
-          opacity: "0",
-          transition: "1s",
-        }}
       >
         <p
           className="px-5 mt-5 pt-5"
@@ -147,7 +133,7 @@ export default function ActiveMovie({
         <p className="px-5 m-0" style={{ fontSize: "18px", lineHeight: "1.6" }}>
           <b>Director</b> : {activeMovieDetails.Director}
         </p>
-      </div>
+      </motion.div>
     </>
   );
 }

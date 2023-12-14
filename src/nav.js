@@ -1,25 +1,22 @@
 import { useEffect, useRef } from "react";
+import { motion } from "framer-motion";
 
 export default function Nav({ found, setSearchMovie }) {
   const focus = useRef(null);
 
   useEffect(function () {
     focus.current.focus();
-    window.addEventListener("load", function () {
-      this.document.querySelector(".nave").style.translate = "0";
-      this.document.querySelector(".left").style.translate = "0";
-      this.document.querySelector(".right").style.translate = "0";
-    });
   }, []);
 
   return (
-    <div
+    <motion.div
+      initial={{ opacity: 0, y: "-200%" }}
+      animate={{ opacity: 1, y: "0" }}
+      transition={{ type: "spring", duration: 3 }}
       className="nave m-md-5 px-5 d-flex flex-column flex-sm-row justify-content-md-between justify-content-center align-items-center py-4 flex-wrap gap-5"
       style={{
         backgroundColor: "#5a38c1",
         borderRadius: "10px",
-        translate: `${window.innerWidth > 800 ? "0 -150%" : "0"}`,
-        transition: "2s",
       }}
     >
       <a
@@ -71,6 +68,6 @@ export default function Nav({ found, setSearchMovie }) {
       >
         Found <b>{found}</b> results
       </h1>
-    </div>
+    </motion.div>
   );
 }
